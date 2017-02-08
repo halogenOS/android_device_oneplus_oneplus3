@@ -426,4 +426,5 @@
     <!-- doze always on -->
     <bool name="config_enableDozeAlwaysOn">true</bool>
 
+    <bool name="config_nightDisplayAvailable">true</bool>
 </resources>
