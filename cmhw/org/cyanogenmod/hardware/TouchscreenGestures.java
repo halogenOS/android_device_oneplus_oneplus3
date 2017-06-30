@@ -17,7 +17,7 @@
 
 package org.cyanogenmod.hardware;
 
-import org.cyanogenmod.internal.util.FileUtils;
+import org.halogenos.io.FileUtils;
 
 import cyanogenmod.hardware.TouchscreenGesture;
 
@@ -102,6 +102,6 @@ public class TouchscreenGestures {
     public static boolean setGestureEnabled(
             final TouchscreenGesture gesture, final boolean state) {
         final String stateStr = state ? "1" : "0";
-        return FileUtils.writeLine(GESTURE_PATHS[gesture.id], stateStr);
+        return FileUtils.writeString(GESTURE_PATHS[gesture.id], stateStr);
     }
 }
