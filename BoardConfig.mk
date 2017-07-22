@@ -154,11 +154,18 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 #TARGET_USES_HWC2 := true
 
-# Enable dexpreopt to speed boot time
-WITH_DEXPREOPT := true
-
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
+
+# Dexpreopt
+ifeq ($(HOST_OS),linux)
+    # Environment variable
+    ifeq ($(TARGET_FORCE_DEXPREOPT),true)
+      WITH_DEXPREOPT := true
+    else
+      WITH_DEXPREOPT := false
+    endif # TARGET_FORCE_DEXPREOPT = true
+endif
 
 # GPS
 TARGET_NO_RPC := true
