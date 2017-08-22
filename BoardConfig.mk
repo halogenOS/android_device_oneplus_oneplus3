@@ -78,9 +78,6 @@ TARGET_KERNEL_CONFIG := oneplus3_defconfig
 TARGET_FRESHLY_COMPILED_DTBTOOL := true
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
-# QCOM hardware
-BOARD_USES_QCOM_HARDWARE := true
-
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-uart"
 
@@ -188,9 +185,6 @@ USE_OPENGL_RENDERER := true
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true
-
-# Timeservice
-BOARD_USES_QC_TIME_SERVICES := true
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
