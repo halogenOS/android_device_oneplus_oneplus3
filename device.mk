@@ -114,18 +114,20 @@ PRODUCT_BOOT_JARS += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audiod \
-    audio.a2dp.default \
     audio.primary.msm8996 \
-    audio.r_submix.default \
+    audio.a2dp.default \
     audio.usb.default \
+    audio.r_submix.default \
     libaudio-resampler \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing \
     libvolumelistener \
     tinymix
 
+PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+    android.hardware.broadcastradio@1.0-impl \
+    android.hardware.soundtrigger@2.0-impl
+ 
 # Audio effects
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
