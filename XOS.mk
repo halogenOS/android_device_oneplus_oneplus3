@@ -1,5 +1,6 @@
 # Copyright (C) 2016 The CyanogenMod Project
 # Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017 The halogenOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -30,10 +31,10 @@ PRODUCT_BRAND := OnePlus
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.ota.romname=$(PRODUCT_NAME) \
-    persist.ota.version=$(shell date +%Y%m%d) \
-    persist.ota.manifest=https://raw.githubusercontent.com/halogenOS/android_extras_ota/XOS-7.1/$(PRODUCT_DEVICE).xml
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    persist.ota.romname=$(PRODUCT_NAME) \
+#    persist.ota.version=$(shell date +%Y%m%d) \
+#    persist.ota.manifest=https://raw.githubusercontent.com/halogenOS/android_extras_ota/XOS-7.1/$(PRODUCT_DEVICE).xml
 
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST += ro.product.model
 
