@@ -156,7 +156,8 @@ PRODUCT_COPY_FILES += \
 # Buttons & Gestures
 PRODUCT_BUTTON_GESTURES_PACKAGES := \
 	oppo-keyhandler \
-	ConfigPanel
+	ConfigPanel \
+        OneplusDoze
 
 PRODUCT_PACKAGES += $(PRODUCT_BUTTON_GESTURES_PACKAGES)
 
