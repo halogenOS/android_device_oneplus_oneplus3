@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.doze;
+package org.halogenos.doze;
 
 import android.content.Context;
 import android.hardware.Sensor;
