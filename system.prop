@@ -166,3 +166,10 @@ persist.sys.usb.config=mtp,adb
 # to smooth scrolling and provide better responsiveness
 ro.min.fling_velocity=160
 ro.max.fling_velocity=20000
+
+# volte de
+persist.dbg.ims_volte_enable=1
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=0
+persist.data.iwlan.enable=true
+persist.dbg.wfc_avail_ovr=0
