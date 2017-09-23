@@ -189,13 +189,6 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne \
     services-ext
 
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images \
-    cm_charger_res_images \
-    font_log.png \
-    libhealthd.cm
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \

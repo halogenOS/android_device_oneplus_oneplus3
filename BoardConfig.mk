@@ -103,7 +103,6 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
-BOARD_HAL_STATIC_LIBRARIES := libhealthd.cm
 
 # D2TW
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
