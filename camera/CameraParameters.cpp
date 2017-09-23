@@ -21,7 +21,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <camera/CameraParameters.h>
-#include <camera/CameraParametersExtra.h>
 #include <system/graphics.h>
 
 namespace android {
@@ -174,12 +173,6 @@ const char CameraParameters::FOCUS_MODE_CONTINUOUS_PICTURE[] = "continuous-pictu
 const char CameraParameters::LIGHTFX_LOWLIGHT[] = "low-light";
 const char CameraParameters::LIGHTFX_HDR[] = "high-dynamic-range";
 
-#ifdef CAMERA_PARAMETERS_EXTRA_C
-CAMERA_PARAMETERS_EXTRA_C
-#endif
-
-char gClientPackageName[50] = "com.oneplus.camera";
-
 CameraParameters::CameraParameters()
                 : mMap()
 {
@@ -244,9 +237,6 @@ void CameraParameters::unflatten(const String8 &params)
 
 void CameraParameters::set(const char *key, const char *value)
 {
-    if (key == NULL || value == NULL)
-        return;
-
     // XXX i think i can do this with strspn()
     if (strchr(key, '=') || strchr(key, ';')) {
         //XXX ALOGE("Key \"%s\"contains invalid character (= or ;)", key);
@@ -257,16 +247,6 @@ void CameraParameters::set(const char *key, const char *value)
         //XXX ALOGE("Value \"%s\"contains invalid character (= or ;)", value);
         return;
     }
-#ifdef QCOM_HARDWARE
-    // qcom cameras default to delivering an extra zero-exposure frame on HDR.
-    // The android SDK only wants one frame, so disable this unless the app
-    // explicitly asks for it
-    if (!get("hdr-need-1x")) {
-        mMap.replaceValueFor(String8("hdr-need-1x"), String8("false"));
-    }
-#endif
-    // Explicitly set CameraParameters::CLIENT_PACKAGE_NAME to OnePlus Camera
-    mMap.replaceValueFor(String8("client-package-name"), String8("com.oneplus.camera"));
 
     mMap.replaceValueFor(String8(key), String8(value));
 }
