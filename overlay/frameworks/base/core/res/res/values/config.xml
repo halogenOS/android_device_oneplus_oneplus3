@@ -432,4 +432,6 @@
     <bool name="config_setColorTransformAccelerated">true</bool>
     <bool name="config_nightDisplayAvailable">true</bool>
 
+    <bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool>
+
 </resources>
