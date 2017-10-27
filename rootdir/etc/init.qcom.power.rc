@@ -135,3 +135,9 @@ on property:dev.bootcomplete=1
     write /dev/cpuset/foreground/cpus 0-2
     write /dev/cpuset/background/cpus 0
     write /dev/cpuset/system-background/cpus 0-2
+
+# Hardware keys backlight control
+on property:persist.hwkeys.backlight=enabled
+    write /sys/class/leds/button-backlight/max_brightness 40
+on property:persist.hwkeys.backlight=disabled
+    write /sys/class/leds/button-backlight/max_brightness 0
