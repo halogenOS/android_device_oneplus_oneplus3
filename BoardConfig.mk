@@ -206,6 +206,7 @@ TARGET_POWERHAL_VARIANT := none
 
 # RIL
 #TARGET_RIL_VARIANT := caf
+BUILD_CAF_DATASERVICES := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
