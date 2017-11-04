@@ -226,18 +226,18 @@ on boot
     setprop persist.camera.HAL3.enabled 1
 
 #start camera server as daemon
-service qcamerasvr /system/bin/mm-qcamera-daemon
+service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
     writepid /dev/cpuset/system-background/tasks
 
-service qfp-daemon /system/bin/qfp-daemon
+service qfp-daemon /system/vendor/bin/qfp-daemon
     class late_start
     user system
     group system drmrpc diag
 
-service qvop-daemon /system/bin/qvop-daemon
+service qvop-daemon /system/vendor/bin/qvop-daemon
     class late_start
     user system
     group system drmrpc
@@ -249,14 +249,14 @@ service qvrd /system/vendor/bin/qvrservice
     socket qvrservice stream 0666 system system
 
 #Start up peripheral manager
-service per_mgr /system/bin/pm-service
+service per_mgr /system/vendor/bin/pm-service
     class core
     user system
     group system
     ioprio rt 4
     writepid /dev/cpuset/system-background/tasks
 
-service per_proxy /system/bin/pm-proxy
+service per_proxy /system/vendor/bin/pm-proxy
     class core
     user system
     group system
@@ -273,7 +273,7 @@ service mdm_launcher /system/bin/sh init.mdm.sh
      class core
      oneshot
 
-service mdm_helper /system/bin/mdm_helper
+service mdm_helper /system/vendor/bin/mdm_helper
      class core
      group root system
      disabled
@@ -284,12 +284,12 @@ service mdm_helper /system/bin/mdm_helper
 #on property:persist.usb.chgdisabled=0
 #    write /sys/class/power_supply/battery/charging_enabled 1
 #
-#service qrngd /system/bin/qrngd -f
+#service qrngd /system/vendor/bin/qrngd -f
 #   class main
 #   user root
 #   group root
 #
-#service qrngp /system/bin/qrngp
+#service qrngp /system/vendor/bin/qrngp
 #    class main
 #    user root
 #    group root
@@ -299,7 +299,7 @@ service mdm_helper /system/bin/mdm_helper
 #on property:sys.boot_completed=1
 #    start qrngp
 
-service qseecomd /system/bin/qseecomd
+service qseecomd /system/vendor/bin/qseecomd
    class core
    user root
    group root
@@ -312,22 +312,22 @@ service gamed /system/vendor/bin/gamed
    disabled
    socket gamed seqpacket 0640 system system
 
-service seempd /system/bin/seempd
+service seempd /system/vendor/bin/seempd
    class late_start
    user system
    group system
    socket seempdw dgram 0666 system system
 
-service secotad /system/bin/secotad
+service secotad /system/vendor/bin/secotad
    class late_start
    user system
    group system
 
-#service mpdecision /system/bin/mpdecision --avg_comp
+#service mpdecision /system/vendor/bin/mpdecision --avg_comp
 #   user root
 #   disabled
 #
-#service qosmgrd /system/bin/qosmgr /system/etc/qosmgr_rules.xml
+#service qosmgrd /system/vendor/bin/qosmgr /system/etc/qosmgr_rules.xml
 #   user system
 #   group system
 #   disabled
@@ -353,66 +353,66 @@ service thermal-engine /system/vendor/bin/thermal-engine
 #    oneshot
 #
 
-service adsprpcd /system/bin/adsprpcd
+service adsprpcd /system/vendor/bin/adsprpcd
    class main
    user media
    group media
 
-service audiod /system/bin/audiod
+service audiod /system/vendor/bin/audiod
    class late_start
    user system
    group system
 
 
-service usf_tester /system/bin/usf_tester
+service usf_tester /system/vendor/bin/usf_tester
     user system
     group system inet
     disabled
     oneshot
 
-service usf_epos /system/bin/usf_epos
+service usf_epos /system/vendor/bin/usf_epos
     class main
     user system
     group system inet
     disabled
     oneshot
 
-service usf_gesture /system/bin/usf_gesture
+service usf_gesture /system/vendor/bin/usf_gesture
     user system
     group system inet
     disabled
     oneshot
 
-service usf_sync_gesture /system/bin/usf_sync_gesture
+service usf_sync_gesture /system/vendor/bin/usf_sync_gesture
     user system
     group system inet audio
     disabled
     oneshot
 
-service usf_p2p /system/bin/usf_p2p
+service usf_p2p /system/vendor/bin/usf_p2p
     user system
     group system inet
     disabled
     oneshot
 
-service usf_hovering /system/bin/usf_hovering
+service usf_hovering /system/vendor/bin/usf_hovering
     user system
     group system inet
     disabled
     oneshot
 
-service usf_proximity /system/bin/usf_proximity
+service usf_proximity /system/vendor/bin/usf_proximity
     class late_start
     user system
     group system inet audio
 
-service usf_pairing /system/bin/usf_pairing
+service usf_pairing /system/vendor/bin/usf_pairing
     user system
     group system inet
     disabled
     oneshot
 
-service usf_sw_calib /system/bin/usf_sw_calib
+service usf_sw_calib /system/vendor/bin/usf_sw_calib
     user system
     group system inet
     disabled
@@ -427,14 +427,14 @@ service usf-post-boot /system/bin/sh /system/etc/usf_post_boot.sh
 on property:init.svc.bootanim=stopped
     start usf-post-boot
 
-service imsqmidaemon /system/bin/imsqmidaemon
+service imsqmidaemon /system/vendor/bin/imsqmidaemon
     class main
     user system
     socket ims_qmid stream 0660 system radio
     group radio log diag
     writepid /dev/cpuset/system-background/tasks
 
-service imsdatadaemon /system/bin/imsdatadaemon
+service imsdatadaemon /system/vendor/bin/imsdatadaemon
     class main
     user system
     socket ims_datad stream 0660 system radio
@@ -462,14 +462,14 @@ on property:persist.sys.pd_enable=0
 on property:sys.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon
 
-service ims_rtp_daemon /system/bin/ims_rtp_daemon
+service ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
    class main
    user system
    socket ims_rtpd stream 0660 system radio
    group radio diag inet log
    disabled
 
-service imscmservice /system/bin/imscmservice
+service imscmservice /system/vendor/bin/imscmservice
    class main
    user system
    group radio diag inet log
@@ -480,13 +480,13 @@ on property:sys.ims.DATA_DAEMON_STATUS=1
    start ims_rtp_daemon
    start imscmservice
 
-service dts_configurator /system/bin/dts_configurator
+service dts_configurator /system/vendor/bin/dts_configurator
     class late_start
     user system
     group system media audio
     oneshot
 
-service dtseagleservice /system/bin/dts_eagle_service
+service dtseagleservice /system/vendor/bin/dts_eagle_service
     class late_start
     user system
     group audio media
@@ -520,18 +520,18 @@ on property:init.svc.zygote=running
 on property:init.svc.zygote=restarting
     stop ppd
 
-service tlocd /system/bin/tloc_daemon
+service tlocd /system/vendor/bin/tloc_daemon
     class late_start
     user system
     group drmrpc gps net_raw
 
-service energy-awareness /system/bin/energy-awareness
+service energy-awareness /system/vendor/bin/energy-awareness
     class main
     user root
     group system
     oneshot
 
-service hvdcp_opti /system/bin/hvdcp_opti
+service hvdcp_opti /system/vendor/bin/hvdcp_opti
     class main
     user root
     group root
@@ -549,12 +549,12 @@ on charger
     mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
     start hvdcp_opti
 
-service dhcpcd_eth0 /system/bin/dhcpcd -ABKLG
+service dhcpcd_eth0 /system/vendor/bin/dhcpcd -ABKLG
 	class late_start
 	disabled
 	oneshot
 
-service iprenew_eth0 /system/bin/dhcpcd -n
+service iprenew_eth0 /system/vendor/bin/dhcpcd -n
 	class late_start
 	disabled
 	oneshot
@@ -566,13 +566,13 @@ service dashd /sbin/dashd
     group root system
     writepid /dev/cpuset/system-background/tasks
 
-service ifaadaemon /system/bin/ifaadaemon
+service ifaadaemon /system/vendor/bin/ifaadaemon
     class late_start
     user system
     group system
     writepid /dev/cpuset/system-background/tasks
 
-service remosaic_daemon /system/bin/remosaic_daemon
+service remosaic_daemon /system/vendor/bin/remosaic_daemon
     class late_start
     user camera
     writepid /dev/cpuset/system-background/tasks
