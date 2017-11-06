@@ -14,17 +14,5 @@
     "repository": "android_vendor_oneplus_oneplus3",
     "target_path": "vendor/oneplus/oneplus3",
     "branch": "XOS-8.0"
-  },
-  {
-    "repository": "LineageOS/android_hardware_cyanogen",
-    "target_path": "hardware/cyanogen",
-    "branch": "lineage-15.0",
-    "remote": "github"
-  },
-  {
-    "repository": "LineageOS/android_packages_resources_devicesettings",
-    "target_path": "packages/resources/devicesettings",
-    "branch": "lineage-15.0",
-    "remote": "github"
   }
 ]
