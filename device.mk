@@ -156,6 +156,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    libcamera_parameters_shim \
     android.hardware.camera.provider@2.4-impl \
     camera.device@3.2-impl \
     Snap \
