@@ -164,14 +164,7 @@ SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 #TARGET_USES_HWC2 := true
 
 # Dexpreopt
-ifeq ($(HOST_OS),linux)
-    # Environment variable
-    ifeq ($(TARGET_FORCE_DEXPREOPT),true)
-      WITH_DEXPREOPT := true
-    else
-      WITH_DEXPREOPT := false
-    endif # TARGET_FORCE_DEXPREOPT = true
-endif
+WITH_DEXPREOPT ?= false
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
