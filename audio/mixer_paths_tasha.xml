@@ -2182,7 +2182,6 @@
         <ctl name="SLIM_0_RX Channels" value="One" />
         <ctl name="RX INT0_1 MIX1 INP0" value="RX0" />
         <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
-        <ctl name="RX0 Digital Volume" value="88" />
         <ctl name="EAR PA Gain" value="G_6_DB" />
     </path>
 <!-- #ifdef VENDOR_EDIT -->
@@ -2201,8 +2200,7 @@
     </path>
 
     <path name="handset-mic-sbc">
-        <path name="adc5" />
-        <ctl name="ADC5 Volume" value="12" />
+        <path name="dmic3" />
     </path>
 
     <path name="three-mic">
@@ -2517,6 +2515,9 @@
     </path>
 
     <path name="capture-fm">
+    </path>
+
+    <path name="aanc-path">
     </path>
 
     <path name="aanc-handset-mic">
