@@ -24,7 +24,7 @@ etc/camera/imx179_chromatix.xml
 etc/camera/imx298_chromatix.xml
 etc/camera/s5k3p8_chromatix.xml
 etc/camera/s5k3p8sp_chromatix.xml
-lib/hw/camera.msm8996.so
+vendor/lib/hw/camera.msm8996.so
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
 lib/libqomx_core.so
@@ -423,7 +423,7 @@ vendor/lib/libmmcamera_isp_sub_module.so
 
 # Fingerprint sensor
 bin/qfp-daemon
-lib64/hw/fingerprint.msm8996.so:lib64/hw/fingeprint.vendor.msm8996.so
+lib64/hw/fingerprint.msm8996.so:lib64/hw/fingerprint.vendor.msm8996.so
 lib64/lib_fpc_tac_shared.so
 vendor/lib64/libqfp-service.so
 vendor/lib64/qfp.wakeup.so
@@ -455,7 +455,7 @@ etc/firmware/mbn_ota/mcfg_sw/mcfg_sw_OEM_Test-VoLTE.mbn
 etc/firmware/mbn_ota/mcfg_sw/mcfg_sw_TMO-Commercial.mbn
 
 # Sensors
-etc/sensors/hals.conf
+vendor/etc/sensors/hals.conf
 etc/sensors/sensor_def_qcomdev.conf
 
 # Signed graphics firmware
@@ -483,3 +483,7 @@ etc/firmware/tp/fw_synaptics_15801.img
 etc/firmware/tp/fw_synaptics_15801b.img
 etc/firmware/tp/fw_synaptics_15811.img
 etc/firmware/tp/fw_synaptics_touchkey.img
+
+# Protobuf
+vendor/lib64/libprotobuf-cpp-late.so|b847f8e16be51a56c9da96970df91ed77ae9e8a1
+vendor/lib64/libprotobuf-cpp-fool.so|f7f9f6042075f3a3269aa229133cefc631843532
