@@ -160,14 +160,7 @@ PRODUCT_PACKAGES += \
     libcamera_parameters_shim \
     android.hardware.camera.provider@2.4-impl \
     camera.device@3.2-impl \
-    Snap \
     libcamera_shim
-
-# Connectivity Engine support (CNE)
-PRODUCT_PACKAGES += \
-    cneapiclient \
-    com.quicinc.cne \
-    services-ext
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -259,10 +252,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
     lights.msm8996
-
-# LiveDisplay native
-PRODUCT_PACKAGES += \
-    libjni_livedisplay
 
 # Media
 PRODUCT_COPY_FILES += \
