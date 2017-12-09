@@ -48,5 +48,9 @@ LOCAL_SHARED_LIBRARIES := \
     libutils \
     android.hardware.power@1.1 \
 
+ifeq ($(TARGET_POWERHINT_VENDOR_MODULE),true)
+  LOCAL_CFLAGS += -DPOWERHINT_IN_VENDOR
+endif
+
 include $(BUILD_EXECUTABLE)
 endif
