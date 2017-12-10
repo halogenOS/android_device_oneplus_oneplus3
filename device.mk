@@ -160,7 +160,9 @@ PRODUCT_PACKAGES += \
     libcamera_parameters_shim \
     android.hardware.camera.provider@2.4-impl \
     camera.device@3.2-impl \
-    libcamera_shim
+    libcamera_shim \
+    org.codeaurora.camera \
+    org.codeaurora.camera.xml
 
 # DRM
 PRODUCT_PACKAGES += \
