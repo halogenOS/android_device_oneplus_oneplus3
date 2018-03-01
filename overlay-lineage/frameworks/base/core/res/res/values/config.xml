@@ -23,7 +23,7 @@
          Otherwise, the buttons will light up whenever the user interacts with the device
     <bool name="config_buttonLightOnKeypressOnly">true</bool> -->
 
-    <!-- <bool name="config_deviceHasVariableButtonBrightness">true</bool> -->
+    <bool name="config_deviceHasVariableButtonBrightness">true</bool>
 
     <!-- Whether notify fingerprint client of successful cancelled authentication
     <bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool> -->
